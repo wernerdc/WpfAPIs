@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfAPIs.WeatherControl"
+﻿<UserControl x:Class="WpfAPIs.BitcoinControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,10 +11,12 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <Button Grid.Row="0" x:Name="btnGetWeather" Content="Wetter abfragen" VerticalAlignment="Bottom" Click="btnGetWeather_Click"/>
-        <DataGrid Grid.Row="1" x:Name="dGridWeather">
-            
-        </DataGrid>
+
+        <Button Grid.Row="0" x:Name="btnGetBitcoins" Content="Bitcoin Infos abrufen" 
+            VerticalAlignment="Bottom"
+            Margin="3"
+            Click="btnGetBitcoins_Click"/>
+        <DataGrid Grid.Row="1" x:Name="dGridBitcoin" 
+              Margin="3,0,3,3" />
     </Grid>
 </UserControl>

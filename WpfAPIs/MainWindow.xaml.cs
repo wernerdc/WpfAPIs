@@ -16,9 +16,10 @@ namespace WpfAPIs
     /// </summary>
     public partial class MainWindow : Window
     {
-         readonly WeatherControl _weatherControl = new WeatherControl();
-        readonly NewsControl _newsControl = new NewsControl();
-        readonly MoviesControl _moviesControl = new MoviesControl();
+        private readonly WeatherControl _weatherControl = new WeatherControl();
+        private readonly NewsControl _newsControl = new NewsControl();
+        private readonly MoviesControl _moviesControl = new MoviesControl();
+        private readonly BitcoinControl _bitcoinControl = new BitcoinControl();
 
         public MainWindow()
         {
@@ -41,6 +42,12 @@ namespace WpfAPIs
         {
             UserContentControl.Content = null;
             UserContentControl.Content = _moviesControl;
+        }
+
+        private void BtnBtc_Click(object sender, RoutedEventArgs e)
+        {
+            UserContentControl.Content = null;
+            UserContentControl.Content = _bitcoinControl;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfAPIs.MoviesControl"
+﻿<UserControl x:Class="WpfAPIs.WeatherControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,7 +11,13 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="1" x:Name="dGridMovies" d:ItemsSource="{d:SampleData ItemCount=5}" />
-        <Button Grid.Row="0" x:Name="btnGetMovies" Content="Filme abfragen" VerticalAlignment="Bottom" />
+        
+        <Button Grid.Row="0" x:Name="btnGetWeather" Content="Wetter abfragen" 
+                VerticalAlignment="Bottom" 
+                Margin="3"
+                Click="btnGetWeather_Click"/>
+        <DataGrid Grid.Row="1" x:Name="dGridWeather"
+                  Margin="3,0,3,3">
+        </DataGrid>
     </Grid>
 </UserControl>

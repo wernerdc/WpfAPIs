@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfAPIs.NewsControl"
+﻿<UserControl x:Class="WpfAPIs.MoviesControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,7 +11,12 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="1" x:Name="dGridNews" d:ItemsSource="{d:SampleData ItemCount=5}" />
-        <Button Grid.Row="0" x:Name="btnGetNews" Content="Nachrichten abfragen" VerticalAlignment="Bottom" />
+
+        <Button Grid.Row="0" x:Name="btnGetMovies" Content="IMDB's Top 100 Filme abrufen" 
+                VerticalAlignment="Bottom"
+                Margin="3"
+                Click="btnGetMovies_Click" />
+        <DataGrid Grid.Row="1" x:Name="dGridMovies" 
+                  Margin="3,0,3,3" />
     </Grid>
 </UserControl>

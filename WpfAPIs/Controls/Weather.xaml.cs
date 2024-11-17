@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAPIs.Models;
 
 namespace WpfAPIs
 {
@@ -35,11 +37,13 @@ namespace WpfAPIs
 
         private async Task GetWeather()
         {
-            var client = new RestClient("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat=35.5&lon=-78.5&units=imperial&lang=en");
+            var client = new RestClient("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat=48.8&lon=8.2&units=metric&lang=de");
             var request = new RestRequest();
-            request.AddHeader("x-rapidapi-key", "9b8f8f04e6mshcaa3f16bf2623dcp162c0ajsne22516b5fcd4");
+            request.AddHeader("x-rapidapi-key", "ec8cca8d91msha4035d03d0a62fep1a974ejsn81cd8f210bd0");
             request.AddHeader("x-rapidapi-host", "weatherbit-v1-mashape.p.rapidapi.com");
-            //IRestResponse response = client.Execute(request);
+
+            //var response = client.Execute(request);
+            //Debug.WriteLine(response.ToString());
             var response = await client.GetAsync<WeatherModel>(request, CancellationToken.None);
             if (response == null)
                 return;
